@@ -4,8 +4,34 @@ platform :ios, '13.0'
 target 'project' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  
+  # Ignore warnings from third-party libraries
+  inhibit_all_warnings!
 
   # Pods for project
+  
+  # RxSwift
+  pod 'Action'
+  pod 'RxGesture'
+  pod 'RxDataSources'
+  
+  
+  pod 'DZNEmptyDataSet'
+  pod 'HandyJSON'
+  pod 'MJRefresh'
+  pod 'SnapKit'
+  pod 'IBAnimatable'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Moya/RxSwift'
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+  pod 'TZImagePickerController'
+  
+  # flex 调试
+  pod 'FLEX', :configurations => ['Debug']
+  
+  
+  
 
   target 'projectTests' do
     inherit! :search_paths

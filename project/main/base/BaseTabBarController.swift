@@ -11,19 +11,22 @@ class BaseTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        edgesForExtendedLayout = .all
+        extendedLayoutIncludesOpaqueBars = true
 
-        // Do any additional setup after loading the view.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+// MARK: Orientation
+extension BaseTabBarController {
+    
+    // 屏幕自动翻转
+    override var shouldAutorotate: Bool { topViewController?.shouldAutorotate ?? false }
+    
+    // 屏幕旋转方向
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { topViewController?.supportedInterfaceOrientations ?? .portrait }
+    
+    // 弹出ViewController 的屏幕旋转方向
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation { topViewController?.preferredInterfaceOrientationForPresentation ?? .portrait }
 }
